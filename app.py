@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-#CSV
+# CSV
 df = pd.read_csv('algoritmos.csv')
 
 # Título principal
@@ -11,6 +11,12 @@ st.title('Análise de Algoritmos')
 # Exibir o DataFrame completo
 st.write(df)
 st.markdown("<hr>", unsafe_allow_html=True)
+
+
+# Convertendo as colunas de desempenho para tipos numéricos, aparentemente essa porra deu certo n sei como
+df['Melhor'] = df['Melhor'].str.replace('.', '').astype(float)
+df['Médio'] = df['Médio'].str.replace('.', '').astype(float)
+df['Pior'] = df['Pior'].str.replace('.', '').astype(float)
 
 # Obtendo os valores únicos da coluna 'Elementos'
 valores_elementos = sorted(df['Elementos'].unique())
@@ -42,7 +48,7 @@ fig_pior.update_layout(xaxis_tickangle=-45, yaxis_title='Microssegundos')
 st.plotly_chart(fig_pior)
 st.markdown("<hr>", unsafe_allow_html=True)
 
-#rodapézin
+# Rodapé
 st.markdown("""
 **INSTITUTO FEDERAL DE SÃO PAULO – IFSP 💚🤍**
 
