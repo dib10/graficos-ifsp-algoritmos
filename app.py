@@ -42,7 +42,7 @@ fig_pior.update_layout(xaxis_tickangle=-45, yaxis_title='Microssegundos')
 st.plotly_chart(fig_pior)
 st.markdown("<hr>", unsafe_allow_html=True)
 
-#rodapé
+#rodapézin
 st.markdown("""
 **INSTITUTO FEDERAL DE SÃO PAULO – IFSP 💚🤍**
 
