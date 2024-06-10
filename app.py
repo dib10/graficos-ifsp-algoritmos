@@ -12,11 +12,10 @@ st.title('Análise de Algoritmos')
 st.write(df)
 st.markdown("<hr>", unsafe_allow_html=True)
 
-
-# Convertendo as colunas de desempenho para tipos numéricos, aparentemente essa porra deu certo n sei como
-df['Melhor'] = df['Melhor'].str.replace('.', '').astype(float)
-df['Médio'] = df['Médio'].str.replace('.', '').astype(float)
-df['Pior'] = df['Pior'].str.replace('.', '').astype(float)
+# Convertendo as colunas de desempenho para tipos numéricos
+df['Melhor'] = df['Melhor'].astype(str).str.replace('.', '').str.replace(',', '.').astype(float)
+df['Médio'] = df['Médio'].astype(str).str.replace('.', '').str.replace(',', '.').astype(float)
+df['Pior'] = df['Pior'].astype(str).str.replace('.', '').str.replace(',', '.').astype(float)
 
 # Obtendo os valores únicos da coluna 'Elementos'
 valores_elementos = sorted(df['Elementos'].unique())
