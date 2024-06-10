@@ -29,21 +29,21 @@ df_filtrado = df[df['Elementos'] == num_elementos]
 
 # Gráfico de Desempenho Melhor
 st.title(f'Desempenho Melhor para {num_elementos} elementos')
-fig_melhor = px.line(df_filtrado, x='Nome do algoritmo', y='Melhor')
+fig_melhor = px.bar(df_filtrado, x='Nome do algoritmo', y='Melhor',color='Melhor')
 fig_melhor.update_layout(xaxis_tickangle=-45, yaxis_title='Microssegundos')
 st.plotly_chart(fig_melhor)
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # Gráfico de Desempenho Médio
 st.title(f'Desempenho Médio para {num_elementos} elementos')
-fig_media = px.line(df_filtrado, x='Nome do algoritmo', y='Médio')
+fig_media = px.bar(df_filtrado, x='Nome do algoritmo', y='Médio',color = 'Médio')
 fig_media.update_layout(xaxis_tickangle=-45, yaxis_title='Microssegundos')
 st.plotly_chart(fig_media)
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # Gráfico de Pior Desempenho
 st.title(f'Pior Desempenho para {num_elementos} elementos')
-fig_pior = px.line(df_filtrado, x='Nome do algoritmo', y='Pior')
+fig_pior = px.bar(df_filtrado, x='Nome do algoritmo', y='Pior',color='Pior')
 fig_pior.update_layout(xaxis_tickangle=-45, yaxis_title='Microssegundos')
 st.plotly_chart(fig_pior)
 st.markdown("<hr>", unsafe_allow_html=True)
